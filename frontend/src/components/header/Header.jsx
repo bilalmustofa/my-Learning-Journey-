@@ -1,11 +1,14 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom'
 import logo from "../../assets/images/logo.png";
 import { CiSearch } from "react-icons/ci";
-import { IoMdNotificationsOutline } from "react-icons/io";
+import { IoMdNotificationsOutline, IoIosArrowDown } from "react-icons/io";
 import { FiUser } from "react-icons/fi";
-import { IoIosArrowDown } from "react-icons/io";
 
 function Header() {
+
+    const [searchOpen, setSearchOpen] = useState(false);
+
   return (
     <>
       <header className="bg-transparent fixed top-0 left-0 w-full z-1000 py-5 sm:py-7 lg:py-10">
@@ -31,12 +34,13 @@ function Header() {
 
           {/* Right Side */}
           <div className="flex items-center gap-4 sm:gap-5 shrink-0">
+
             {/* search */}
-            <div className="relative flex items-center">
-              <button>
+            <div className={`flex items-center border border-transparent transition-all duration-300 ${searchOpen ? "border-white px-2" : ""}`}>
+              <button onClick={() => setSearchOpen(!searchOpen)}>
                 <CiSearch size={20} className="cursor-pointer" />
               </button>
-              <input type="text" placeholder="Search" className="hidden sm:block ml-2 w-24 md:w-32 lg:w-40 bg-transparent outline-none text-sm" />
+              <input type="text" placeholder="Search" className={`bg-transparent outline-none text-sm transition-all duration-300 ${searchOpen ? "w-32 sm:w-40 ml-2" : "w-0 ml-0" }`} />
             </div>
 
             {/* notification */}
@@ -46,12 +50,12 @@ function Header() {
                 <IoMdNotificationsOutline size={20} className="cursor-pointer"/>
               </button>
               {/* notification number */}
-              <span className="absolute -top-2 -right-2 text-[10px]">2</span>
+              <span className="absolute -top-2 -right-2 text-[10px] bg-[red] px-1 rounded-full">2</span>
             </div>
 
             {/* profile */}
             <div>
-              <button className="flex items-center gap-1">
+              <button className="flex items-center">
                 {/* user icon */}
                 <FiUser size={20} className="cursor-pointer"/>
                 {/* dropDown Icon */}
