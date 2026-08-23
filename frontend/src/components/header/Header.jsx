@@ -8,6 +8,7 @@ import { FiUser } from "react-icons/fi";
 function Header() {
 
     const [searchOpen, setSearchOpen] = useState(false);
+    const [profileOpen, setProfileOpen] = useState(false);
 
   return (
     <>
@@ -54,13 +55,23 @@ function Header() {
             </div>
 
             {/* profile */}
-            <div>
-              <button className="flex items-center">
+            <div className='relative'>
+              <button className="flex items-center" onClick={() => setProfileOpen(!profileOpen)}>
                 {/* user icon */}
                 <FiUser size={20} className="cursor-pointer"/>
                 {/* dropDown Icon */}
                 <IoIosArrowDown className="hidden sm:block cursor-pointer"/>
               </button>
+              {
+                profileOpen && (
+                  <div className='absolute top-full right-0 border mt-2 min-w-30 rounded-sm bg-black text-white text-[14px]'>
+                    <Link className='block w-full px-3 py-2 hover:bg-gray-400'>Account</Link>
+                    <Link className='block w-full px-3 py-2 hover:bg-gray-400'>Help Center</Link>
+                    <hr className="border-gray-700"/>
+                    <button className='block w-full px-3 py-2  text-left cursor-pointer hover:bg-gray-400'>Sign Out</button>
+                  </div>
+                )
+              }
             </div>
           </div>
 
