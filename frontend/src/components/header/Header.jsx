@@ -12,7 +12,7 @@ function Header() {
 
   return (
     <>
-      <header className="fixed top-0 left-0 w-full z-1000 py-5 sm:py-7 lg:py-8 bg-black text-white">
+      <header className="fixed top-0 left-0 w-full z-1000 py-4 sm:py-5 lg:py-7 bg-black text-white">
          <div className="flex items-center justify-between max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-14">
 
           {/* Left Side */}
