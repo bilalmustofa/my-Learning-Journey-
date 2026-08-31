@@ -1,13 +1,38 @@
+import { useEffect, useState } from 'react'
+import { movieInstance } from '../../Utility/MovieInstance.js'
+import requests from '../../Utility/requestUrls.js'
+
 import logo from "../../assets/images/logo.png";
-import heroBanner from "../../assets/images/heroBanner.jpeg";
 import { FiPlay, FiInfo } from "react-icons/fi";
 
 function Hero() {
+  const BANNER_BASE= "https://image.tmdb.org/t/p/original/"
+  const [bannerImage, setBannerImage] = useState({});
+
+  useEffect(()=>{
+        async function fetchBannerImage() {
+            const request = await movieInstance.get(requests.fetchNetflixOriginals)
+
+            setBannerImage(
+                request.data.results[Math.floor(Math.random()*request.data.results.length)]
+            )
+        }
+        fetchBannerImage()
+    },[])
+
+    function truncate(str,n) {
+        return str?.length>n ?  str.substr(0,n-1) + "..." : str;
+    }
   return (
     <>
       <section
         className="relative min-h-full bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url(${heroBanner})` }}
+        style={
+            {
+                backgroundSize: "cover",
+                backgroundImage: `url("${BANNER_BASE}${bannerImage.backdrop_path}")`
+            }
+        }
       >
         {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/40"></div>
@@ -20,14 +45,12 @@ function Hero() {
 
             {/* Title */}
             <h1 className="text-xl md:text-2xl lg:text-2xl font-bold text-white mb-3">
-              Bridgerton
+              {bannerImage?.original_name}
             </h1>
 
             {/* Description */}
             <p className="max-w-xl text-sm md:text-base lg:text-lg text-white leading-relaxed mb-7">
-              Shondaland's Emmy-winning series brings Julia Quinn's novels to
-              life, as eight siblings seek their perfect match amid London's
-              scandals and soirees.
+              {truncate(bannerImage?.overview,120)}
             </p>
 
             {/* Buttons */}

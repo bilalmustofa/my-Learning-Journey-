@@ -1,18 +1,18 @@
-import KillerSally from '../../assets/images/10061.jpg'
-import Pepsi from '../../assets/images/10066.jpg'
-import FitForTv from '../../assets/images/10067.jpg'
-import champion from '../../assets/images/10079.jpg'
-import TheArt from '../../assets/images/10072.jpg'
-import coldStorage from '../../assets/images/coldStorage.webp'
-import hamnet from '../../assets/images/hamnet.webp'
-import hoppers from '../../assets/images/hoppers.webp'
-import marshals from '../../assets/images/marshals.webp'
-import monarch from '../../assets/images/monarchLegacyOfMonsters.webp'
-import pursuit from '../../assets/images/pursuitOfJade.webp'
-import scream from '../../assets/images/pursuitOfJade.webp'
-import TheBride from '../../assets/images/TheBride.webp'
-import Vladimir from '../../assets/images/vladimir.webp'
-import YoungSherlock from '../../assets/images/youngSherlock.webp'
+import KillerSally from '../assets/image/10061.jpg'
+import Pepsi from '../assets/image/10066.jpg'
+import FitForTv from '../assets/image/10067.jpg'
+import champion from '../assets/image/10080.jpg'
+import TheArt from '../assets/image/10072.jpg'
+import coldStorage from '../assets/image/coldStorage.webp'
+import hamnet from '../assets/image/hamnet.webp'
+import hoppers from '../assets/image/hoppers.webp'
+import marshals from '../assets/image/marshals.webp'
+import monarch from '../assets/image/monarchLegacyOfMonsters.webp'
+import pursuit from '../assets/image/pursuitOfJade.webp'
+import scream from '../assets/image/scream.webp'
+import TheBride from '../assets/image/TheBride.webp'
+import Vladimir from '../assets/image/vladimir.webp'
+import YoungSherlock from '../assets/image/youngSherlock.webp'
 
 export const movies = [
   {
@@ -95,7 +95,7 @@ export const movies = [
     genres: ["Adventure", "Fantasy"],
     badge: "Recently added"
   },
-   {
+  {
     id: 9,
     title: "Marshals",
     poster_path: marshals,
