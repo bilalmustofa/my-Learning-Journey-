@@ -97,3 +97,5 @@ High	        More creative and varied
   - Hallucinations
 An AI hallucination happens when a model produces an answer that sounds confident but is wrong, invented, or unsupported.
 As a developer, I need to verify AI-generated code and information instead of accepting it blindly.
+
+# The AI Foundations, History & Terminology Topic is finished.
