@@ -1,3 +1,18 @@
+import dbConfig from "../../../../db/db.config.js";
+
+// get recent conversation row from db
+const getRecentConversationRows = async (limit = 5) => {
+    const normalizedLimit = Number.parseInt(limit, 10);
+    const safeLimit = Number.isNaN(normalizedLimit) || normalizedLimit <= 0 ? 20 : normalizedLimit;
+
+    const [rows] = await dbConfig.execute(
+        `SELECT id, role, content, created_at
+        FROM conversations
+        ORDER BY id DESC
+        LIMIT ${safeLimit}`
+    );
+    return rows.reverse();
+}
 
 export async function createConservationService(question) {
     try {
@@ -9,7 +24,15 @@ export async function createConservationService(question) {
             throw error;
         }
 
-        return `chat saved to db with question: ${question}`;
+        // get recent conversations
+        const historyRows = await getRecentConversationRows(5)
+        
+         // save to Database
+        const query = `INSERT INTO conversations (content, role) VALUES (?, 'user')`
+        const [result] = await dbConfig.query(query, [question])
+
+        return historyRows;
+        
     } catch (error) {
         throw error;
     }
