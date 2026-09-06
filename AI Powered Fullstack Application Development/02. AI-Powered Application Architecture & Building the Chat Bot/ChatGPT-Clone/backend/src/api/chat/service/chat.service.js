@@ -2,7 +2,7 @@ import dbConfig from "../../../../db/db.config.js";
 import { GoogleGenAI } from '@google/genai';
 
 // get recent conversation row from db
-const getRecentConversationRows = async (limit = 5) => {
+export const getRecentConversationRows = async (limit = 5) => {
     const normalizedLimit = Number.parseInt(limit, 10);
     const safeLimit = Number.isNaN(normalizedLimit) || normalizedLimit <= 0 ? 20 : normalizedLimit;
 
