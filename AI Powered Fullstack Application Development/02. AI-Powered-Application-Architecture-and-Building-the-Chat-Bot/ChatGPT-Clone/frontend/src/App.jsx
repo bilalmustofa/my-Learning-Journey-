@@ -1,5 +1,6 @@
 import './App.css'
 import Sidebar from './components/SideBar/Sidebar.jsx'
+import ChatHeader from './components/ChatHeader/ChatHeader.jsx';
 
 function App() {
 
@@ -7,6 +8,10 @@ function App() {
     <>
       <div className='app'>
         <Sidebar />
+
+        <main className='chat'>
+          <ChatHeader />
+        </main>
       </div>
     </>
   )
