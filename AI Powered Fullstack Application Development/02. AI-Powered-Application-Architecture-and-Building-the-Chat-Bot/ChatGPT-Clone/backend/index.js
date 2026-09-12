@@ -2,11 +2,13 @@ import 'dotenv/config'
 import express from "express";
 import dbConfig from './db/db.config.js'
 import mainRouter from './src/api/main.routes.js';
+import cors from 'cors'
 import { errorHandler } from './src/middleware/error-handler.js'
 
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 app.use('/api', mainRouter);
 
 
