@@ -2,7 +2,7 @@ import { Bot } from 'lucide-react';
 import ChatMessage from '../ChatMessage/ChatMessage.jsx';
 import styles from './MessageList.module.css';
 
-function MessageList({ conversations, isLoading}) {
+function MessageList({ conversations, isLoading, messagesEndRef }) {
   return (
     <>
       <div className={styles.messages}>
@@ -26,6 +26,8 @@ function MessageList({ conversations, isLoading}) {
                  </div>
                </div>
              )}
+
+             <div ref={messagesEndRef}></div>
       </div>
     </>
   )

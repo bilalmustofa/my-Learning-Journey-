@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import "./App.css";
 import Sidebar from "./components/SideBar/Sidebar.jsx";
 import ChatHeader from "./components/ChatHeader/ChatHeader.jsx";
@@ -10,7 +10,18 @@ function App() {
   const API_BASE_URL = "http://localhost:3000/api";
 
   const [conversations, setConversations] = useState([]);
-    const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const messagesEndRef = useRef(null);
+
+  // scroll to bottom function
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  useEffect(() => {
+      scrollToBottom();
+    }, [conversations, isLoading]);
+  
   
   // Get Request
   useEffect(() => {
@@ -44,7 +55,7 @@ function App() {
       const { data } = await axios.post(`${API_BASE_URL}/chat/conversations`, {
             question: question.trim(),
         });
-        console.log(data.data)
+        setConversations(prev => [...prev, data?.data?.assistantConversation]);
       } catch (error) {
           console.error('Error posting conversation:', error);
    } finally {
@@ -59,7 +70,7 @@ function App() {
         <main className="chat">
           <ChatHeader />
 
-          <MessageList conversations={conversations} isLoading={isLoading}/>
+          <MessageList conversations={conversations} isLoading={isLoading} messagesEndRef={messagesEndRef}/>
 
           <ChatInput handleSendMessage= {handleSendMessage}/>
         </main>
