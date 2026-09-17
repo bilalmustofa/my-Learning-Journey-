@@ -10,29 +10,12 @@ function App() {
   const API_BASE_URL = "http://localhost:3000/api";
 
   const [conversations, setConversations] = useState([]);
-
-  // useEffect(() => {
-  //   const fetchConversations = async () => {
-  //     try {
-  //       const response = await axios.get(`${API_BASE_URL}/chat/conversations`);
-  //       if (response.data.success) {
-  //         setConversations(response.data.data.conversations);
-  //       }
-  //     } catch (error) {
-  //       console.error("Error fetching conversations:", error);
-  //     }
-  //   };
-  //   fetchConversations();
-  // }, []);
   
   // Get Request
   useEffect(() => {
     const fetchConversations = async () => {
       try {
         const { data } = await axios.get(`${API_BASE_URL}/chat/conversations`);
-        // if (response.data.success) {
-        //   setConversations(response.data.data.conversations);
-        // }
         console.log(data.data)
         setConversations(data.data)
       } catch (error) {

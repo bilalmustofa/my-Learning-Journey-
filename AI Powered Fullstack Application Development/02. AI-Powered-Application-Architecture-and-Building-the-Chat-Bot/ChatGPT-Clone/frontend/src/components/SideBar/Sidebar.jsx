@@ -1,13 +1,4 @@
-import {
-  MessageSquare,
-  Search,
-  Image as ImageIcon,
-  LayoutGrid,
-  Microscope,
-  Code2,
-  FolderKanban,
-  PanelLeftClose,
-} from 'lucide-react';
+import { MessageSquare, Search, Image as ImageIcon, LayoutGrid, Microscope, Code2, FolderKanban, PanelLeftClose} from 'lucide-react';
 import styles from './Sidebar.module.css';
 
 export default function Sidebar() {
