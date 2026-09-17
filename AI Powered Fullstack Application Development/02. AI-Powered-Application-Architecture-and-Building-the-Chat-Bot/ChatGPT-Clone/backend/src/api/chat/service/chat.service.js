@@ -29,6 +29,7 @@ const generateAssistantAnswer = async({historyRows, question})=>{
     model : GEMINI_MODEL,
     config: {
             maxOutputTokens: 1024,
+            systemInstruction: ` you should answer the question by amharic only`
         },
     history : formattedHistory
   });
