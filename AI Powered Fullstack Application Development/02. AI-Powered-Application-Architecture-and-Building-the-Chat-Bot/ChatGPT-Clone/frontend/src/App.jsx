@@ -10,6 +10,7 @@ function App() {
   const API_BASE_URL = "http://localhost:3000/api";
 
   const [conversations, setConversations] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
   
   // Get Request
   useEffect(() => {
@@ -39,12 +40,15 @@ function App() {
     setConversations(prev => [...prev, tempUserMessage]);
     
     try {
+      setIsLoading(true);
       const { data } = await axios.post(`${API_BASE_URL}/chat/conversations`, {
             question: question.trim(),
         });
         console.log(data.data)
       } catch (error) {
           console.error('Error posting conversation:', error);
+   } finally {
+      setIsLoading(false);
    }
    }
   return (
@@ -55,7 +59,7 @@ function App() {
         <main className="chat">
           <ChatHeader />
 
-          <MessageList conversations={conversations}/>
+          <MessageList conversations={conversations} isLoading={isLoading}/>
 
           <ChatInput handleSendMessage= {handleSendMessage}/>
         </main>
