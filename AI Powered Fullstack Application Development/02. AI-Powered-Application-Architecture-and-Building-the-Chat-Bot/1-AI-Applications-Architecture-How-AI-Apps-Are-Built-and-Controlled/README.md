@@ -2,12 +2,12 @@
 
 AI Architecture, Model Selection & Prompt Engineering
 
-This folder contains my learning notes and practice from the AI Architecture, Model Selection & Advanced Terminology course.
+This folder contains my learning note from the AI Architecture, Model Selection & Advanced Terminology topics
 
-The course focuses on understanding how AI applications are structured, how different AI components work together, how to select models, and how to design effective prompts for Large Language Models (LLMs).
+This Topics focuses on understanding how AI applications are structured, how different AI components work together, how to select models, and how to design effective prompts for Large Language Models (LLMs).
 
-📚 What I Learned
-🏗️ 1. Anatomy of an AI Application
+ What I Learned
+ 1. Anatomy of an AI Application
 
 I learned how the main parts of an AI application work together:
 
@@ -31,13 +31,13 @@ I learned how the main parts of an AI application work together:
                  │
                  ▼
            AI Model / Brain
-🧠 LLM API — The Brain
+ ### LLM API — The Brain
 
 AI models such as GPT, Gemini, and Claude can be accessed through APIs.
 
 The API acts as the connection between my application and the underlying AI model. The model responds based on the prompt and data provided to it.
 
-⚙️ Backend — The Orchestrator
+### Backend — The Orchestrator
 
 The backend manages important application logic such as:
 
@@ -54,3 +54,23 @@ Common backend technologies include:
 Node.js
 Express
 FastAPI
+
+### Frontend — The Interface
+
+The frontend provides the interface where users:
+
+Enter prompts
+View AI responses
+Interact with buttons and controls
+Receive streaming responses
+
+### Database — Data & Memory
+
+The database stores information such as:
+
+User data
+Chat messages
+Conversation history
+Session information
+
+Because the model does not automatically remember previous requests, relevant history can be retrieved from the database and included in a new prompt.
