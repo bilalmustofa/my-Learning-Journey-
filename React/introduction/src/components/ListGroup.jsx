@@ -5,6 +5,11 @@ function ListGroup() {
     // let cites = []
     const fruits =['Banana', 'Apple', 'Avocado', 'Orange'];
     // let fruits = [];
+
+   // Event handler
+    const handleClick = () => {
+        console.log('Clicked')
+    }
     
   return (
     <>
@@ -14,7 +19,7 @@ function ListGroup() {
             <h3>Cites List</h3>
             {cites.length === 0 ? <p>Cites Not Found</p> : null}
           {cites.map((city, i) => (
-            <li key={i}>{city}</li>
+            <li key={i} onClick={() => console.log(city, 'Index: ', i )}>{city}</li>
           ))}
         </ul>
 
@@ -22,7 +27,7 @@ function ListGroup() {
           <h3>Fruits List</h3>
           {fruits.length === 0 && <p>fruits Not Found</p>}
           {fruits.map((fruit, i) => (
-            <li key={i}>{fruit}</li>
+            <li key={i} onClick={handleClick}>{fruit}</li>
           ))}
         </ol>
       </div>
