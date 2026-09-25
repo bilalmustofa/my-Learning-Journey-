@@ -1,9 +1,10 @@
+import ListGroup from "./components/ListGroup.jsx";
 
 function App() {
 
   return (
     <>
-      <h1>test</h1>
+      <ListGroup />
     </>
   )
 }
