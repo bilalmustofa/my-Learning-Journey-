@@ -1,0 +1,48 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background-color: #e1e0e0;
+}
+.navbar {
+    background-color: #fff;
+    display: flex;
+    justify-content: space-around; 
+}
+
+.navbar li {
+    list-style: none;
+}
+
+.navbar li a {
+  text-decoration: none;
+  color: black;
+  padding: 10px;
+  display: inline-block;
+  width: 100%;
+}
+
+.navbar li:hover {
+    background-color: #7c0e7c;
+}
+
+.subMenu {
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  right: 15%;
+  transition: opacity 0.5s ease;
+  display: block;
+  background-color: #fff;
+}
+
+.navbar li:hover .subMenu {
+    visibility: visible;
+    opacity: 1;
+}
+
+.subMenu li {
+    padding: 10px;
+}
