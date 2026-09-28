@@ -9,9 +9,9 @@ function NavBar() {
             <li>
                 <a href="#">Apps</a>
                 <ul className={styles.subMenu}>
-                    <li>Calendar</li>
-                    <li>Chat</li>
-                    <li>Email</li>
+                    <li><a href="#">Calendar</a></li>
+                    <li><a href="#">Chat</a></li>
+                    <li><a href="#">Email</a></li>
                 </ul>
             </li>
         </ul>
