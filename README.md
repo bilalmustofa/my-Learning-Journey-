@@ -11,7 +11,6 @@ My goal is to continuously learn, build real projects, improve my problem-solvin
 - Learning notes and summaries
 - Coding exercises
 - Practice projects
-- Experiments and challenges
 - Personal projects
 
 I will continue updating this repository as I learn, practice, and grow as a developer.
