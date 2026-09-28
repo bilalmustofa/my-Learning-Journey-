@@ -1,0 +1,48 @@
+.container {
+    margin: 20px;
+    padding: 20px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #E3E1EB;
+    font-family: sans-serif;
+}
+
+/* Div one */
+.divOne {
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+}
+.divOne div p {
+    padding: 5px;
+    cursor: pointer;
+}
+.divOne div p:hover {
+    color: blue;
+}
+
+/* Div Two */
+.divTwo {
+    margin-top: 20px;
+}
+.divTwo p {
+    color: grey;
+}
+
+.links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-top: 25px;
+}
+.links li {
+    text-decoration: none;
+    list-style-type: none;
+}
+.links li a {
+    color: black;
+}
