@@ -71,3 +71,16 @@ function Greeting({ name }) {
 }
 export default Greeting;
 ```
+# How Do You Render Lists in React?
+
+- rendering lists in React involves converting arrays of data into JSX elements, typically using the map function.
+```jsx
+function FruitList() {
+  const fruits = ['Apple', 'Banana', 'Cherry', 'Date'];
+  return (
+    <ul>
+      {fruits.map(fruit => <li>{fruit}</li>)}
+    </ul>
+  );
+}
+```
