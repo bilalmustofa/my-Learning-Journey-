@@ -42,3 +42,32 @@ npm create vite@latest [project-name]
 npm run dev 
 ```
 - Then open up a new browser tab at http://localhost:5173/.
+
+# How Do You Pass Props from a Parent Component to a Child Component in React?
+
+## what is props
+-  Props, which is short for properties, is the way for parent components to pass data down to the child component.
+- Props can be of any type: strings, numbers, booleans, objects, or arrays.
+
+Example:
+```jsx
+// parent component
+function App() {
+  return(
+    <>
+      <Greeting name="Jessica" />;
+    </>
+  ) 
+}
+export default App;
+
+function Greeting({ name }) {
+  console.log(name);
+  return (
+    <>
+      <h1>Hi {name}!</h1>;
+    </>
+  )
+}
+export default Greeting;
+```
