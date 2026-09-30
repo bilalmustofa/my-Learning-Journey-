@@ -35,3 +35,21 @@
   font-size: 1.2em;
   color: #333;
 }
+.bg-green{
+  background-color: green;
+}
+.bg-purple{
+  background-color: #8E44AD;
+}
+.bg-blue{
+  background-color: #3498DB;
+}
+.bg-brown{
+  background-color: #BF3D7E;
+}
+.bg-red{
+  background-color: #E74C3C;
+}
+.bg-gray{
+  background-color: #95A5A6;
+}
