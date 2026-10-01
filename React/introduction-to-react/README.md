@@ -103,3 +103,21 @@ function handleClick() {
 
 <button onClick={handleClick}>Click Me</button>;
 ```
+## What is State, and How Does the useState Hook Work?
+
+- State is one of the most important fundamentals of React and other front-end frameworks. It's like the brain of a component, meaning it holds information that can change over time and controls how the components behave and look.
+- State represents the dynamic data in your React component, like the value from a user input, data fetched from an API, or an item in a to-do list.
+- The useState hook is a function that lets you declare state variables in functional components. 
+* To use the useState hook, you need to import it from React:
+```jsx
+import { useState } from "react";
+```
+then it declare a state variable when you import useState:
+```jsx
+const [stateVariable, setStateFunction] = useState(initialValue);
+```
+* In the state variable you have the following:
+
+- stateVariable holds the current state value
+- setStateFunction (the setter function) updates the state variable
+- initialValue sets the initial state
