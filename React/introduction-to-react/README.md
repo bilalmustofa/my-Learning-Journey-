@@ -121,3 +121,6 @@ const [stateVariable, setStateFunction] = useState(initialValue);
 - stateVariable holds the current state value
 - setStateFunction (the setter function) updates the state variable
 - initialValue sets the initial state
+
+## What Is Rendering in React
+- In React, rendering is the process by which components appear in the user interface (UI), usually the browser.
