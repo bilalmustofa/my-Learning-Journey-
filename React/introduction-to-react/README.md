@@ -124,3 +124,6 @@ const [stateVariable, setStateFunction] = useState(initialValue);
 
 ## What Is Rendering in React
 - In React, rendering is the process by which components appear in the user interface (UI), usually the browser.
+
+## Working with the useEffect Hook
+- useEffect() Hook: In React, an effect is anything that happens outside the component rendering process. That is, anything React does not handle directly as part of rendering the UI. Common examples include fetching data, updating the browser tab's title, reading from or writing to the browser's local storage, getting the user's location, and much more. 
