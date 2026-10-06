@@ -1,6 +1,5 @@
 // Importing the useState hook
 import { useState } from "react";
-import styles from "./Counter.module.css";
 
 function Counter() {
   // initialValue value
