@@ -127,3 +127,16 @@ const [stateVariable, setStateFunction] = useState(initialValue);
 
 ## Working with the useEffect Hook
 - useEffect() Hook: In React, an effect is anything that happens outside the component rendering process. That is, anything React does not handle directly as part of rendering the UI. Common examples include fetching data, updating the browser tab's title, reading from or writing to the browser's local storage, getting the user's location, and much more. 
+
+## How Does Routing Work in React?
+
+In earlier lessons, you learned that React is a single page application. Single page applications are applications that contain one HTML file and use JavaScript to dynamically update any content on the page.
+- React Router is a third party library that allows you to add routing to your React applications. 
+- To begin, you will need to install React Router in an existing React project like this:
+```bash
+  npm i react-router
+```
+- To enable routes in your application, you will need to import statement to include the Routes and Route components like this:
+```jsx
+import { BrowserRouter, Routes, Route } from "react-router";
+```
