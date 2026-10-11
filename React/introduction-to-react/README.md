@@ -140,3 +140,11 @@ In earlier lessons, you learned that React is a single page application. Single 
 ```jsx
 import { BrowserRouter, Routes, Route } from "react-router";
 ```
+
+* Example: 
+
+| Primitive | Purpose | Example |
+| :--- | :--- | :--- |
+| **Router** | Configures the route registry and syncs the UI with the browser history. | `createBrowserRouter` |
+| **Routes / Route** | Maps specific text URL paths to concrete React component elements. | `<Route path="/about" element={<About />} />` |
+| **Link** | Replaces standard HTML `<a>` tags to prevent full page reloads upon click. | `<Link to="/dashboard">Dashboard</Link>` |
