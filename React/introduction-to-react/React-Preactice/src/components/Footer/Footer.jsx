@@ -1,4 +1,3 @@
-import styles from './Footer.module.css';
 import { IoGameController } from "react-icons/io5";
 import { LuBird } from "react-icons/lu";
 import { MdComputer } from "react-icons/md";
