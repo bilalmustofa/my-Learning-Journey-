@@ -6,9 +6,9 @@ import { CiBasketball } from "react-icons/ci";
 function Footer() {
   return (
     <>
-        <footer className={styles.container}>
+        <footer>
             {/* Div one */}
-            <div className={styles.divOne}>
+            <div>
                 <div>
                     <p>Fitness Dashboard</p>
                     <p>Services</p>
@@ -26,13 +26,13 @@ function Footer() {
             </div>
 
             {/* Div two */}
-            <div className={styles.divTwo}>
+            <div>
                 <div>
                     <p>© 2024 Fitness Dashboard. All Rights Reserved.</p>
                 </div>
 
                 <div>
-                    <ul className={styles.links}>
+                    <ul>
                         <li><a href="#"><IoGameController size={25}/></a></li>
                         <li><a href="#"><LuBird size={25}/></a></li>
                         <li><a href="#"><MdComputer size={25}/></a></li>
