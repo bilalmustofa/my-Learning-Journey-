@@ -27,3 +27,37 @@
 * **Git** is the underlying open-source version control system used to track code history locally.
 * **GitHub** is a cloud-based platform built on top of Git that hosts your source code online.
 * **Global Scale:** GitHub is currently the largest host of source code in the world, providing collaboration tools that leverage Git.
+
+## What is an Untracked File?
+An untracked file is any file in your project folder that Git is not yet tracking.
+
+## What is a Tracked File?
+A tracked file is a file that Git is watching for changes.
+
+## Git Staging Environment
+- The staging environment (or staging area) is like a waiting room for your changes.
+- You use it to tell Git exactly which files you want to include in your next commit.
+## Git Staging Commands
+
+Use these essential commands to manage your files in the Git staging area before committing:
+
+* **Stage a specific file:**
+  ```bash
+  git add <file>
+  ```
+* **Stage all changes** (new, modified, and deleted files):
+  ```bash
+  git add --all
+  # OR
+  git add -A
+  # OR
+  git add .
+  ```
+* **Check current status** (see what is staged vs unstaged):
+  ```bash
+  git status
+  ```
+* **Unstage a file** (remove a file from the staging area without losing changes):
+  ```bash
+  git restore --staged <file>
+  ```
