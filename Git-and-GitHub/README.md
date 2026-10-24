@@ -61,3 +61,10 @@ Use these essential commands to manage your files in the Git staging area before
   ```bash
   git restore --staged <file>
   ```
+
+## What is Git Branches?
+
+In Git, branch is like a separate workspace where you can make change and try new ideas without affecting the main project.
+
+## Why use branches?
+branches let you work on different parts of a project, like new features or bug fixes, without interfering with the main branch
