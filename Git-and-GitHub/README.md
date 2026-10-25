@@ -61,6 +61,17 @@ Use these essential commands to manage your files in the Git staging area before
   ```bash
   git restore --staged <file>
   ```
+## What is a Commit?
+- A commit is like a save point in your project.
+- It records a snapshot of your files at a certain time, with a message describing what changed.
+- To save your staged changes, use
+```bash
+git commit -m "message"
+```
+- To view the history of commits for a repository, you can use the git log command:
+``bash 
+git log
+```
 
 ## What is Git Branches?
 
@@ -93,4 +104,3 @@ test
 - Moving us from the current branch, to the one specified at the end of the command:
 ```bash
 git checkout hello-world-images
-```
