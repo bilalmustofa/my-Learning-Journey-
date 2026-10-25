@@ -68,3 +68,29 @@ In Git, branch is like a separate workspace where you can make change and try ne
 
 ## Why use branches?
 branches let you work on different parts of a project, like new features or bug fixes, without interfering with the main branch
+
+## Creating a New Branch
+- Let's say you want to add a new feature. You can create a new branch for it.
+- We are working in our local repository, and we do not want to disturb or possibly wreck the main project.
+
+So we create a new branch:
+```bash
+git branch test
+```
+- Now we created a new branch called "test"
+
+## Listing All Branches
+- Let's confirm that we have created a new branch. To see all branches in your repository, use:
+```bash
+git branch
+test
+* master
+```
+- We can see the new branch with the name "test", but the * beside master specifies that we are currently on that branch.
+
+## Switching Between Branches
+- checkout is the command used to check out or switch a branch.
+- Moving us from the current branch, to the one specified at the end of the command:
+```bash
+git checkout hello-world-images
+```
