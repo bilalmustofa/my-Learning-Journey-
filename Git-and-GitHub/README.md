@@ -104,3 +104,23 @@ test
 - Moving us from the current branch, to the one specified at the end of the command:
 ```bash
 git checkout hello-world-images
+```
+
+## Deleting a Branch
+```bash
+git branch -d test
+```
+- This deletes the branch named "test"
+
+## Best Practices for Working with Branches
+- Use clear, descriptive branch names (like feature/login-page or bugfix/header-crash).
+- Keep each branch focused on a single purpose or feature.
+- Regularly merge changes from the main branch to keep your branch up-to-date.
+- Delete branches that are no longer needed to keep your repository clean.
+
+* Some Git Command
+- Rename a branch: ```bash git branch -m old-name new-name ```
+- List all branches: ```bash git branch ```
+- Switch branches: ```bash git checkout branch-name ``` or ```bash git switch branch-name ```
+- Delete a branch (not merged): ```bash git branch -D branch-name ```
+- See which branch you're on: ```bash git status ```
