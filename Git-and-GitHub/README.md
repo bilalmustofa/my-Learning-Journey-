@@ -143,3 +143,20 @@ git branch -d test
 ## What is a Merge Conflict?
 - A merge conflict happens when changes in two branches touch the same part of a file and Git doesn't know which version to keep.
 - Think of it like two people editing the same sentence in a document in different ways-Git needs your help to decide which version to use.
+
+## How to Resolve a Merge Conflict
+- Git will mark the conflict in your file.
+- You need to open the file, look for lines like <<<<<<< HEAD and =======, and decide what the final version should be.
+
+## Troubleshooting & Tips
+- If you want to cancel a merge, use``` git merge --abort```
+- Always commit or stash your changes before starting a merge.
+- Read the conflict markers carefully and remove them after you've resolved the issue.
+- Use git status to see what files need your attention.
+
+## Summary of Git Best Practices
+- Commit Often
+- Write Clear Commit Messages
+- Use Branches
+- Pull Before You Push
+- Review Changes Before Committing
