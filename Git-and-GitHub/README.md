@@ -124,3 +124,22 @@ git branch -d test
 - Switch branches: ```bash git checkout branch-name ``` or ```bash git switch branch-name ```
 - Delete a branch (not merged): ```bash git branch -D branch-name ```
 - See which branch you're on: ```bash git status ```
+
+## Git Branch Merge
+## What is Merging in Git?
+- Merging in Git means combining the changes from one branch into another.
+- This is how you bring your work together after working separately on different features or bug fixes.
+
+## Common git merge Options
+* git merge - Merge a branch into your current branch
+
+## Merging Branches (git merge)
+- Best Practices for Merging Branches
+- Always commit or stash your changes before starting a merge.
+- Regularly merge from the main branch into your feature branch to minimize conflicts.
+- Read and resolve conflicts carefully-don't just accept all changes blindly.
+- Write clear and descriptive merge commit messages.
+
+## What is a Merge Conflict?
+- A merge conflict happens when changes in two branches touch the same part of a file and Git doesn't know which version to keep.
+- Think of it like two people editing the same sentence in a document in different ways-Git needs your help to decide which version to use.
