@@ -69,7 +69,7 @@ Use these essential commands to manage your files in the Git staging area before
 git commit -m "message"
 ```
 - To view the history of commits for a repository, you can use the git log command:
-``bash 
+```bash 
 git log
 ```
 
@@ -118,7 +118,7 @@ git branch -d test
 - Regularly merge changes from the main branch to keep your branch up-to-date.
 - Delete branches that are no longer needed to keep your repository clean.
 
-* Some Git Command
+* **Some Git Command**
 - Rename a branch: ```bash git branch -m old-name new-name ```
 - List all branches: ```bash git branch ```
 - Switch branches: ```bash git checkout branch-name ``` or ```bash git switch branch-name ```
@@ -143,3 +143,36 @@ git branch -d test
 ## What is a Merge Conflict?
 - A merge conflict happens when changes in two branches touch the same part of a file and Git doesn't know which version to keep.
 - Think of it like two people editing the same sentence in a document in different ways-Git needs your help to decide which version to use.
+
+## Git Pull from GitHub
+- When working as a team on a project, it is important that everyone stays up to date.
+- Any time you start working on a project, you should get the most recent changes to your local copy, With Git, you can do that with pull.
+
+## Git Pull
+- It is used to pull all changes from a remote repository into the branch you are working on.
+```bash
+git pull origin main
+```
+
+## Git Push to GitHub
+- When we have made changes locally, we want to update our remote repository with the changes.
+- Transferring our local changes to our remote is done with a push command.
+```bash
+git push
+```
+- This will upload your local commits to GitHub.
+- You must have already committed your changes with git commit.
+
+# Git GitHub Flow
+## What is the GitHub Flow?
+- The GitHub Flow is a simple, effective workflow for collaborating on code using Git and GitHub.
+- It helps teams work together smoothly, experiment safely, and deliver new features or fixes quickly.
+
+- **Here's how the GitHub Flow works, step by step:**
+ - **Create a Branch:** Start new work without affecting the main code.
+- **Make Commits:** Save progress as you make changes.
+- **Open a Pull Request:** Ask others to review your work.
+- **Review:** Discuss and improve the changes together.
+- **Deploy:** Test your changes before merging.
+- **Merge:** Add your finished work to the main branch.
+- This workflow is designed to be easy for beginners and powerful for teams of any size.
