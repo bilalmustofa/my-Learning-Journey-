@@ -176,3 +176,17 @@ git push
 - **Deploy:** Test your changes before merging.
 - **Merge:** Add your finished work to the main branch.
 - This workflow is designed to be easy for beginners and powerful for teams of any size.
+
+# Git GitHub Fork
+## Fork a Repository
+- A fork is a copy of a repository, This is useful when you want to contribute to someone else's project or start your own project based on theirs.
+- fork is not a command in Git, but something offered in GitHub and other repository hosts.
+
+## Clone a Fork from GitHub
+- A clone is a full copy of a repository, including all logging and versions of files.
+```bash
+git clone <repo URL>
+```
+## Git GitHub Send Pull Request
+- We have made a lot of changes to our local Git, Now commit the changes and we push them to our GitHub fork
+- Go to GitHub, and we see that the repository has a new commit. And we can send a Pull Request to the original repository:
