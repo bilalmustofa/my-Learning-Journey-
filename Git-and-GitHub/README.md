@@ -189,4 +189,13 @@ git clone <repo URL>
 ```
 ## Git GitHub Send Pull Request
 - We have made a lot of changes to our local Git, Now commit the changes and we push them to our GitHub fork
-- Go to GitHub, and we see that the repository has a new commit. And we can send a Pull Request to the original repository:
+- Go to GitHub, and we see that the repository has a new commit. And we can send a Pull Request to the original repository
+
+## Git Revert
+ What Does Git Revert Do?
+- The git revert command undoes a previous commit by creating a new commit that reverses the changes.
+- This keeps your commit history intact and is the safest way to undo changes in a shared repository.
+
+```bash
+git revert
+```
