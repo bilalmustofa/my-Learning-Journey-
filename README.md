@@ -13,6 +13,10 @@ My goal is to continuously learn, build real projects, improve my problem-solvin
 - Practice projects
 - Personal projects
 
+## Current Progress
+
+I’m continuing to build my skills through regular practice, documenting what I learn, and applying it in projects. This repository will grow alongside my learning journey.
+
 I will continue updating this repository as I learn, practice, and grow as a developer.
 
 > Every expert was once a beginner.
