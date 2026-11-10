@@ -1,22 +1,23 @@
 # React Learning Journey
 
-This folder documents my progress as I learn React, the JavaScript library for building interactive user interfaces. It will collect my notes, examples, exercises, and projects as I work through the fundamentals and build practical applications.
+This folder contains my learning path for React and front-end development. Here I practice the core concepts, build small projects, and document what I learn as I improve my skills in building interactive and modern user interfaces.
 
-## Folder Structure
+## Included in this folder
 
-```text
-React/
-├── README.md
-└── introduction/
-```
+- `introduction-to-react/` — notes and exercises covering React basics, components, props, state, events, hooks, and routing
+- `FullStack-Note-Store-website/` — a more complete project that combines React with a backend to build a full-stack note application
 
-The `introduction` folder is the starting point for React learning materials. More notes and projects will be added as I progress.
+## What I’m learning
 
-## Goals
+- React fundamentals and component-based architecture
+- Props, state, and event handling
+- Reusable UI components and layout patterns
+- Hooks such as `useState` and `useEffect`
+- Routing and project structure in React apps
+- Building practical applications from concepts to working projects
 
-- Understand how React applications are structured
-- Practice building reusable, accessible UI components
-- Apply React concepts in small projects
-- Keep track of what I learn and improve over time
+## Current focus
+
+I am continuing to strengthen my React skills by combining theory with hands-on practice. Each project and exercise in this folder helps me improve my understanding of front-end development and real-world app building.
 
 This section is part of my broader [Learning Journey](../README.md).
