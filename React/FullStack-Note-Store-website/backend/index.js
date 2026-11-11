@@ -29,7 +29,7 @@ app.get("/checker", (req, res) => {
  * Start listening for incoming HTTP requests on the configured port.
  * Performs database connectivity verification upon startup.
  */
-const server = app.listen(PORT, async (err) => {
+app.listen(PORT, async (err) => {
     if (err) {
         console.error("Failed to start the server:", err.message);
         return;
