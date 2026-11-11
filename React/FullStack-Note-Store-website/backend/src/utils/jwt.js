@@ -4,6 +4,7 @@
  * Provides helper functions for signing and verifying JSON Web Tokens (JWT).
  * Uses secret keys and expiration durations configured in environment variables.
  */
+import 'dotenv/config'; 
 import jwt from "jsonwebtoken"; 
 
 // Secret key used to digitally sign and verify tokens
