@@ -6,13 +6,20 @@
  */
 import "dotenv/config"; 
 import express from "express"; 
+import cors from "cors";
 import { checkDbConnection } from "./db/config.js";
+import mainRouter from "./src/api/routes.js";
 
 // Network port configuration: uses PORT from .env, defaulting to 4000
 const PORT = process.env.PORT || 4000; 
 
 // Initialize the Express application instance
 const app = express(); 
+
+// Global Middleware
+app.use(cors()); // Enable Cross-Origin Resource Sharing for frontend clients
+app.use(express.json()); // Parse incoming JSON request bodies (populates req.body)
+app.use(express.urlencoded({ extended: true })); // Parse URL-encoded form data
 
 /**
  * Health Check Route
@@ -24,6 +31,9 @@ app.get("/checker", (req, res) => {
     console.log("Server health check requested");
     res.status(200).send("Server health is good");
 });
+
+// Mount the main API router gateway under the "/api" prefix
+app.use("/api", mainRouter);
 
 /**
  * Start listening for incoming HTTP requests on the configured port.
