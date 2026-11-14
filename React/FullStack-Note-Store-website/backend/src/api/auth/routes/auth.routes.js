@@ -17,5 +17,12 @@ const router = express.Router();
  */
 router.post("/register", registerController);
 
+/**
+ * @route   POST /api/auth/login
+ * @desc    Authenticate user credentials and issue a JWT token (get token)
+ * @access  Public
+ */
+router.post("/login", loginController);
+
 export default router;
 
