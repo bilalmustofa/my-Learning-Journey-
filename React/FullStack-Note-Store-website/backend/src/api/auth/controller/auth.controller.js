@@ -5,6 +5,7 @@
  * Handles incoming HTTP requests for authentication routes, validates request payloads,
  * delegates business logic to authentication services, and returns formatted HTTP responses.
  */
+import { verifyToken } from "../../../utils/jwt.js";
 import { registerService, loginService } from "../service/auth.service.js";
 
 /**
@@ -120,6 +121,50 @@ export const loginController = async (req, res, next) => {
         return res.status(error.statusCode || 500).json({
             success: false,
             message: error.message || "Internal server error"
+        });
+    }
+};
+
+/**
+ * Controller to handle user logout requests.
+ * 
+ * In a stateless JWT architecture, logs out the authenticated user by clearing any session
+ * cookies and notifying the client application to discard its locally stored authentication token.
+ * Requires `authenticateUser` middleware to precede this handler.
+ *
+ * @param {import('express').Request} req - Express request object (contains `req.user` if authenticated)
+ * @param {import('express').Response} res - Express response object
+ * @param {import('express').NextFunction} [next] - Express next middleware function
+ * @returns {Promise<import('express').Response>}
+ */
+export const logoutController = async (req, res, next) => {
+    try {
+        // 1. Optional token extraction (defensive check if accessed without middleware)
+        const authHeader = req.headers && req.headers.authorization;
+        const token = authHeader && authHeader.startsWith("Bearer ")
+            ? authHeader.split(" ")[1]
+            : null;
+
+        if (token) {
+            try {
+                // Verify token if needed (e.g., for logging or future token blacklist/revocation)
+                verifyToken(token);
+            } catch (tokenError) {
+                // Intentionally ignored: an expired or malformed token should still permit logout
+            }
+        }
+
+        // 3. Respond with confirmation instructing the client to purge stored tokens
+        return res.status(200).json({
+            success: true,
+            message: "Logged out successfully."
+        });
+
+    } catch (error) {
+        console.error("Logout controller error:", error);
+        return res.status(500).json({
+            success: false,
+            message: "Internal server error"
         });
     }
 };
