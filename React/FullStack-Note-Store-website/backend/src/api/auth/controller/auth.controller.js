@@ -5,7 +5,7 @@
  * Handles incoming HTTP requests for authentication routes, validates request payloads,
  * delegates business logic to authentication services, and returns formatted HTTP responses.
  */
-import { registerService } from "../service/auth.service.js";
+import { registerService, loginService } from "../service/auth.service.js";
 
 /**
  * Controller to handle new user registration.
@@ -72,6 +72,51 @@ export const registerController = async (req, res, next) => {
         }
 
         // Return a generic 500 error for unexpected server exceptions
+        return res.status(error.statusCode || 500).json({
+            success: false,
+            message: error.message || "Internal server error"
+        });
+    }
+};
+
+/**
+ * Controller to handle user login and authentication.
+ *
+ * @param {import('express').Request} req - Express request object containing `{ email, password }` in `req.body`
+ * @param {import('express').Response} res - Express response object
+ * @param {import('express').NextFunction} next - Express next middleware function
+ * @returns {Promise<import('express').Response>}
+ */
+export const loginController = async (req, res, next) => {
+    try {
+        const { email, password } = req.body || {};
+
+        // 1. Validate required input fields
+        if (!email || !password) {
+            return res.status(400).json({
+                success: false,
+                message: "Email and password are required."
+            });
+        }
+
+        // 2. Delegate authentication and token generation to service layer
+        const authResult = await loginService({
+            email: email.trim().toLowerCase(),
+            password
+        });
+
+        // 3. Return authenticated user profile and signed JWT token (200 OK)
+        return res.status(200).json({
+            success: true,
+            message: "Login successful.",
+            user: authResult.user,
+            token: authResult.token
+        });
+
+    } catch (error) {
+        console.error("Login controller error:", error);
+
+        // Return appropriate HTTP status (e.g. 401 Unauthorized for invalid credentials)
         return res.status(error.statusCode || 500).json({
             success: false,
             message: error.message || "Internal server error"

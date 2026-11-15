@@ -5,7 +5,7 @@
  * Base Mount Point: `/api/auth` (configured in mainRouter)
  */
 import express from "express";
-import { registerController } from "../controller/auth.controller.js";
+import { registerController, loginController } from "../controller/auth.controller.js";
 
 // Initialize an isolated Express router instance for authentication
 const router = express.Router();
